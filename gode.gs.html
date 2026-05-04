@@ -1,0 +1,362 @@
+// ═══════════════════════════════════════════════════════════════
+// OPERIX CORE GAS — Standalone Security & Upload Script
+// ═══════════════════════════════════════════════════════════════
+
+function doPost(e) {
+  try {
+	var props = {};
+	if (e.postData && e.postData.contents) {
+	  try {
+		props = JSON.parse(e.postData.contents);
+	  } catch (parseError) {
+		console.warn("JSON Parse Error: " + parseError.message);
+	  }
+	}
+	
+	var action = props.action || (e.parameter && e.parameter.action);
+
+
+ // ════════════════════════════════════════════════
+	// 📄 THE NEW PDF CONTRACT ENGINE
+	// ════════════════════════════════════════════════
+	if (action === 'sendContract') {
+	  const targetEmail = props.email;
+	  const subject = props.subject;
+	  let htmlContent = props.htmlBody;
+	  
+	  // 🔥 FIX 1: EMBED THE IMAGE SO GITHUB CANNOT BLOCK IT 🔥
+	  try {
+		const logoUrl = "https://raw.githubusercontent.com/MindBreakOps/LX-Permits/main/imind.png";
+		const imgResponse = UrlFetchApp.fetch(logoUrl);
+		const base64Str = Utilities.base64Encode(imgResponse.getBlob().getBytes());
+		const dataUri = "data:image/png;base64," + base64Str;
+		
+		// Swap the raw URL with the embedded Base64 string in the HTML
+		htmlContent = htmlContent.replace(logoUrl, dataUri);
+	  } catch(e) {
+		console.warn("Could not fetch the logo image.");
+	  }
+	  
+	  // 1. Tell Google to read the HTML and morph it into a PDF
+	  const pdfBlob = Utilities.newBlob(htmlContent, MimeType.HTML).getAs(MimeType.PDF);
+	  
+	  // 2. Clean the subject line to use as the filename
+	  const cleanFileName = subject.replace(/[^a-zA-Z0-9\-_ ]/g, "").trim().replace(/ /g, "_") + ".pdf";
+	  pdfBlob.setName(cleanFileName);
+	  
+	  // 3. Build a beautiful HTML Email Body with a Professional Signature
+	  const emailHtmlTemplate = `
+		<div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #333; line-height: 1.6; max-width: 600px; padding: 20px;">
+		  <p style="font-size: 16px;">Hello,</p>
+		  <p style="font-size: 15px; color: #444;">Please find your official document attached to this email. We kindly request that you review the contents carefully.</p>
+		  <p style="font-size: 15px; color: #444;">If required, please sign and return a copy to the Human Resources department at your earliest convenience.</p>
+		  <br>
+		  <p style="font-size: 15px; color: #444; margin-bottom: 5px;">Best regards,</p>
+		  
+		  <table border="0" cellpadding="0" cellspacing="0" style="margin-top: 15px; border-top: 2px solid #e2e8f0; padding-top: 15px; width: 100%;">
+			<tr>
+			  <td width="65" valign="top" style="padding-right: 15px;">
+				<img src="https://raw.githubusercontent.com/MindBreakOps/LX-Permits/main/imind.png" alt="Company Logo" width="60" style="display: block;">
+			  </td>
+			  <td valign="top">
+				<div style="font-size: 15px; font-weight: 800; color: #0f172a;">Human Resources Department</div>
+				<div style="font-size: 13px; font-weight: 700; color: #b8860b; margin-top: 2px; text-transform: uppercase;">OPERIX Solutions</div>
+				<div style="font-size: 12px; color: #64748b; margin-top: 4px;">Riyadh, Kingdom of Saudi Arabia</div>
+				<div style="font-size: 11px; color: #94a3b8; margin-top: 6px; font-style: italic;">This is an automated, confidential system-generated email.</div>
+			  </td>
+			</tr>
+		  </table>
+		</div>
+	  `;
+
+	  // 4. Fire the email with the HTML Body AND the PDF attached
+	  MailApp.sendEmail({
+		to: targetEmail,
+		subject: subject,
+		htmlBody: emailHtmlTemplate, // <-- Using HTML instead of plain text!
+		attachments: [pdfBlob]
+	  });
+	  
+	  // Tell the HR app it was a success
+	  return ContentService.createTextOutput(JSON.stringify({ success: true }))
+		.setMimeType(ContentService.MimeType.JSON);
+	}
+	function doPost(e) {
+  var params = JSON.parse(e.postData.contents);
+  
+  if (params.action === 'createMeeting') {
+	return createMeeting(params);
+  }
+}
+
+function createMeeting(details) {
+  try {
+	var start = new Date(details.startTime);
+	var end = new Date(start.getTime() + (details.duration * 60000));
+	
+	// 1. Get your Primary Calendar
+	var calendar = CalendarApp.getDefaultCalendar();
+	
+	// 2. Create the event and send the invite
+	var event = calendar.createEvent(details.title, start, end, {
+	  guests: details.email,
+	  sendInvites: true // This sends the email automatically!
+	});
+	
+	return ContentService.createTextOutput(JSON.stringify({
+	  status: 'success', 
+	  eventId: event.getId()
+	})).setMimeType(ContentService.MimeType.JSON);
+	
+  } catch (err) {
+	return ContentService.createTextOutput(JSON.stringify({
+	  status: 'error', 
+	  message: err.toString()
+	})).setMimeType(ContentService.MimeType.JSON);
+  }
+}
+	// ════════════════════════════════════════════════
+	// 💵 THE FINANCE PDF & EMAIL ENGINE
+	// ════════════════════════════════════════════════
+	if (action === 'sendFinanceDoc') {
+	  const targetEmail = props.email;
+	  const subject = props.subject;
+	  let htmlContent = props.htmlBody;
+	  
+	  // 1. Embed the Finance Logo so it doesn't break in the PDF
+	  try {
+		const logoUrl = "https://raw.githubusercontent.com/MindBreakOps/LX-Permits/main/fin.png";
+		const imgResponse = UrlFetchApp.fetch(logoUrl);
+		const base64Str = Utilities.base64Encode(imgResponse.getBlob().getBytes());
+		const dataUri = "data:image/png;base64," + base64Str;
+		htmlContent = htmlContent.replace(logoUrl, dataUri);
+	  } catch(e) {
+		console.warn("Could not fetch the finance logo.");
+	  }
+	  
+	  // 2. Generate the PDF
+	  const pdfBlob = Utilities.newBlob(htmlContent, MimeType.HTML).getAs(MimeType.PDF);
+	  const cleanFileName = subject.replace(/[^a-zA-Z0-9\-_ ]/g, "").trim().replace(/ /g, "_") + ".pdf";
+	  pdfBlob.setName(cleanFileName);
+	  
+	  // 3. The Finance-Specific Email Signature (Strict Blue Theme)
+	  const financeEmailTemplate = `
+		<div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #333; line-height: 1.6; max-width: 600px; padding: 20px;">
+		  <p style="font-size: 16px;">Dear Stakeholder,</p>
+		  <p style="font-size: 15px; color: #444;">Please find your requested financial document attached to this email.</p>
+		  <p style="font-size: 15px; color: #444;">If you have any questions regarding this statement, invoice, or purchase order, please reply directly to this email or contact our accounts team.</p>
+		  <br>
+		  <p style="font-size: 15px; color: #444; margin-bottom: 5px;">Best regards,</p>
+		  
+		  <table border="0" cellpadding="0" cellspacing="0" style="margin-top: 15px; border-top: 2px solid #e2e8f0; padding-top: 15px; width: 100%;">
+			<tr>
+			  <td width="65" valign="top" style="padding-right: 15px;">
+				<img src="https://raw.githubusercontent.com/MindBreakOps/LX-Permits/main/fin.png" alt="Finance Logo" width="60" style="display: block; border-radius: 8px;">
+			  </td>
+			  <td valign="top">
+				<div style="font-size: 15px; font-weight: 800; color: #0f172a;">Finance & Accounts Payable</div>
+				<div style="font-size: 13px; font-weight: 700; color: #1e3a8a; margin-top: 2px; text-transform: uppercase;">OPERIX Enterprise Solutions</div>
+				<div style="font-size: 12px; color: #64748b; margin-top: 4px;">Riyadh, Kingdom of Saudi Arabia</div>
+				<div style="font-size: 11px; color: #94a3b8; margin-top: 6px; font-style: italic;">CONFIDENTIAL: This email and any attachments contain financial data intended solely for the addressee.</div>
+			  </td>
+			</tr>
+		  </table>
+		</div>
+	  `;
+
+	  // 4. Send the Email
+	  MailApp.sendEmail({
+		to: targetEmail,
+		subject: subject,
+		htmlBody: financeEmailTemplate,
+		attachments: [pdfBlob],
+		name: "OPERIX Finance Department" // Shows up as the sender name in the inbox!
+	  });
+	  
+	  return ContentService.createTextOutput(JSON.stringify({ success: true })).setMimeType(ContentService.MimeType.JSON);
+	}
+	// ═══════════════════════════════════════════════════════════
+	// 1. ACTION: SEND OTP EMAIL
+	// ═══════════════════════════════════════════════════════════
+	if (action === 'sendOTP') {
+	  var toEmail  = props.email  || (e.parameter && e.parameter.email);
+	  var code     = props.code   || (e.parameter && e.parameter.code) || props.otp;
+	  var userName = props.name   || (e.parameter && e.parameter.name) || "Account Holder";
+
+	  console.log("CRITICAL: Attempting send to: " + toEmail);
+	  console.log("Payload Code: " + code);
+
+	  if (!toEmail || toEmail.indexOf('@') === -1) {
+		throw new Error("RECIPIENT_INVALID: " + toEmail);
+	  }
+
+	  var timestamp = Utilities.formatDate(new Date(), "Asia/Riyadh", "yyyy-MM-dd HH:mm:ss");
+
+	  // --- UPGRADED ENTERPRISE TEMPLATE START ---
+	  var htmlBody = `
+	  <div style="background-color: #e2e8f0; padding: 40px 15px; font-family: 'Segoe UI', Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased;">
+		<table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 650px; background-color: #ffffff; border: 1px solid #cbd5e1; border-top: 5px solid #1e293b; border-collapse: collapse; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);">
+		  
+		  <tr>
+			<td style="padding: 35px 40px; background-color: #f8fafc; border-bottom: 1px solid #e2e8f0;">
+			  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+				<tr>
+				  <td width="60" style="padding-right: 20px;">
+					<img src="https://raw.githubusercontent.com/MindBreakOps/LX-Permits/main/hr.png" alt="OPERIX Logo" width="60" style="display: block; border-radius: 8px;">
+				  </td>
+				  <td>
+					<div style="font-size: 18px; font-weight: 800; color: #0f172a; letter-spacing: -0.5px;">OPERIX Enterprise SUITE</div>
+					<div style="font-size: 12px; font-weight: 600; color: #3b82f6; letter-spacing: 2px; text-transform: uppercase; margin-top: 4px;">Human Resources Information System (HRIS)</div>
+				  </td>
+				</tr>
+			  </table>
+			</td>
+		  </tr>
+
+		  <tr>
+			<td style="padding: 40px;">
+			  <div style="font-size: 15px; color: #0f172a; font-weight: 600; margin-bottom: 15px;">
+				Authentication Request for: ${userName}
+			  </div>
+			  <div style="font-size: 14px; color: #475569; line-height: 1.6; margin-bottom: 30px;">
+				The OPERIX Security Gateway has intercepted a login attempt requiring two-factor authorization. To proceed with the secure handshake, input the cryptographically generated token below into your active session.
+			  </div>
+
+			  <table border="0" cellpadding="0" cellspacing="0" width="100%" style="margin-bottom: 35px;">
+				<tr>
+				  <td align="center" style="background-color: #f1f5f9; border: 1px solid #cbd5e1; padding: 30px; border-radius: 4px;">
+					<div style="font-size: 11px; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 15px;">One-Time Access Token</div>
+					<div style="font-family: 'Courier New', Courier, monospace; font-size: 46px; font-weight: 900; color: #0f172a; letter-spacing: 14px; line-height: 1;">
+					  ${code}
+					</div>
+				  </td>
+				</tr>
+			  </table>
+
+			  <table border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #fff1f2; border-left: 4px solid #e11d48; margin-bottom: 35px;">
+				<tr>
+				  <td width="50" align="center" valign="top" style="padding: 15px 0 15px 15px;">
+					<div style="display: inline-block; width: 24px; height: 24px; background-color: #e11d48; color: #ffffff; border-radius: 50%; text-align: center; line-height: 24px; font-weight: bold; font-family: Arial, sans-serif; font-size: 16px;">
+					  !
+					</div>
+				  </td>
+				  <td style="padding: 15px 20px 15px 10px;">
+					<div style="font-size: 12px; font-weight: 800; color: #9f1239; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px;">Strict Confidentiality Required</div>
+					<div style="font-size: 12px; color: #be123c; line-height: 1.5;">
+					  OPERIX Enterprise administrators will never request this token. Do not forward this communication. If you did not initialize this request, your credentials may be compromised.
+					</div>
+				  </td>
+				</tr>
+			  </table>
+
+			  <div style="font-size: 11px; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 1px; border-bottom: 1px solid #e2e8f0; padding-bottom: 8px; margin-bottom: 15px;">
+				Session Telemetry & Request Data
+			  </div>
+			  <table border="0" cellpadding="0" cellspacing="0" width="100%" style="font-family: 'Courier New', Courier, monospace; font-size: 12px; color: #475569; line-height: 1.8;">
+				<tr>
+				  <td width="35%"><strong>Target Address:</strong></td>
+				  <td width="65%">${toEmail}</td>
+				</tr>
+				<tr>
+				  <td><strong>Timestamp (AST):</strong></td>
+				  <td>${timestamp}</td>
+				</tr>
+				<tr>
+				  <td><strong>Auth Protocol:</strong></td>
+				  <td>OPERIX-SEC-V4 / TOTP-SHA256</td>
+				</tr>
+				<tr>
+				  <td><strong>Token Lifespan:</strong></td>
+				  <td>300 Seconds (5 Minutes)</td>
+				</tr>
+			  </table>
+			</td>
+		  </tr>
+
+		  <tr>
+			<td style="background-color: #0f172a; padding: 25px 40px; text-align: center;">
+			  <div style="font-size: 10px; color: #94a3b8; text-transform: uppercase; letter-spacing: 1.5px; line-height: 1.6;">
+				&copy; 2026 OPERIX Enterprise Suite<br>
+				Restricted & Confidential System Generated Message
+			  </div>
+			</td>
+		  </tr>
+		</table>
+	  </div>`;
+	  // --- UPGRADED ENTERPRISE TEMPLATE END ---
+
+	  try {
+		GmailApp.sendEmail(toEmail, "OPERIX SECURITY TOKEN: " + code, "", {
+		  htmlBody: htmlBody,
+		  name: "OPERIX HRIS Security"
+		});
+		console.log("SUCCESS: Email handed to Google Servers for: " + toEmail);
+	  } catch (mailErr) {
+		console.error("GMAIL_SERVICE_ERROR: " + mailErr.message);
+		throw mailErr;
+	  }
+
+	  return json({ success: true, target: toEmail });
+	}
+
+	// ═══════════════════════════════════════════════════════════
+	// 2. ACTION: UPLOAD FILE TO GOOGLE DRIVE
+	// ═══════════════════════════════════════════════════════════
+	if (action === 'uploadMailAttachment') {
+	  var folderName = (props.folderName || 'OPERIX HR').toString();
+	  var parts      = folderName.split('/').map(function(p){ return p.trim(); });
+
+	  var rootFolders = DriveApp.getFoldersByName(parts[0]);
+	  var folder      = rootFolders.hasNext() ? rootFolders.next() : DriveApp.createFolder(parts[0]);
+
+	  if (parts.length > 1 && parts[1]) {
+		var subFolders = folder.getFoldersByName(parts[1]);
+		folder = subFolders.hasNext() ? subFolders.next() : folder.createFolder(parts[1]);
+	  }
+
+	  var base64   = (props.base64   || '').replace(/^data:[^;]+;base64,/, '');
+	  var mimeType = (props.mimeType || 'application/octet-stream').toString();
+	  var fileName = (props.fileName || ('file_' + Date.now())).toString();
+
+	  var bytes = Utilities.base64Decode(base64);
+	  var blob  = Utilities.newBlob(bytes, mimeType, fileName);
+	  var file  = folder.createFile(blob);
+	  file.setSharing(DriveApp.Access.ANYONE_WITH_LINK, DriveApp.Permission.VIEW);
+
+	  return json({
+		success:     true,
+		url:         'https://drive.google.com/file/d/' + file.getId() + '/view',
+		downloadUrl: 'https://drive.google.com/uc?export=download&id=' + file.getId(),
+		fileId:      file.getId(),
+		name:        fileName
+	  });
+	}
+
+	return json({ success: false, error: 'Unknown action: ' + action });
+
+  } catch (err) {
+	console.error("GLOBAL_SCRIPT_ERROR: " + err.message);
+	return json({ success: false, error: err.message });
+  }
+}
+
+// ═══════════════════════════════════════════════════════════
+// HELPER FUNCTIONS
+// ═══════════════════════════════════════════════════════════
+function doGet(e) {
+  if (e.parameter && e.parameter.action === 'ping') {
+	return json({ success: true, message: 'OPERIX Script is alive ✓', time: new Date().toISOString() });
+  }
+  return json({ success: false, error: 'GET not supported' });
+}
+
+function json(obj) {
+  return ContentService.createTextOutput(JSON.stringify(obj)).setMimeType(ContentService.MimeType.JSON);
+}
+
+// ── TEST FUNCTION (Run manually in GAS to authorize GmailApp) ──
+function testSendOTP() {
+  var testEmail = 'your-email@example.com'; 
+  GmailApp.sendEmail(testEmail, 'OPERIX OTP Test', 'Test OTP: 123456 — If you got this, GAS email works!');
+  Logger.log('Test email sent to ' + testEmail);
+}
