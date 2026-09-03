@@ -35,7 +35,7 @@
 
 * **Corporate Site:** [https://operixsolutions.com](https://operixsolutions.com)
 * **Product Network Domain:** `*.operix-solutions.online`
-* **Official SVG Icons Directory:** `operix-website/public/icons/system/`
+* **Local Icons Directory:** [`./icons/system/`](./icons/system/)
 
 ---
 
@@ -56,10 +56,10 @@
 
 | Vector Logo | Domain | Core Stack | Platform Focus |
 |:---:|---|---|---|
-| <img src="https://operixsolutions.com/icons/system/xyros.svg" width="30"/> | **Frontend & Web** | React 19, Vite, Tailwind CSS, Framer Motion, Zustand | Modern Work OS & SaaS Interfaces |
-| <img src="https://operixsolutions.com/icons/system/operations.svg" width="30"/> | **Mobile & Native** | React Native, Expo, Capacitor Native (iOS/Android), PWA | Offline-First & ANPR Field Ops |
-| <img src="https://operixsolutions.com/icons/system/fmis.svg" width="30"/> | **Backend & DB** | Supabase, PostgreSQL, Hybrid JSONB, Dexie IndexedDB | Financial Ledger & Multi-Tenant RLS |
-| <img src="https://operixsolutions.com/icons/system/speciality.svg" width="30"/> | **AI & Vision** | Google Gemini AI, `face-api.js`, Tesseract OCR, Leaflet | Biometric Attendance & Generative AI |
+| <img src="./icons/system/xyros.svg" width="30"/> | **Frontend & Web** | React 19, Vite, Tailwind CSS, Framer Motion, Zustand | Modern Work OS & SaaS Interfaces |
+| <img src="./icons/system/operations.svg" width="30"/> | **Mobile & Native** | React Native, Expo, Capacitor Native (iOS/Android), PWA | Offline-First & ANPR Field Ops |
+| <img src="./icons/system/fmis.svg" width="30"/> | **Backend & DB** | Supabase, PostgreSQL, Hybrid JSONB, Dexie IndexedDB | Financial Ledger & Multi-Tenant RLS |
+| <img src="./icons/system/speciality.svg" width="30"/> | **AI & Vision** | Google Gemini AI, `face-api.js`, Tesseract OCR, Leaflet | Biometric Attendance & Generative AI |
 
 </div>
 
@@ -73,20 +73,20 @@ All enterprise products hosted on **`*.operix-solutions.online`** and **`operixs
 
 | Official Product SVG | Product Name | Category & Badges | Official URL | Link / Status |
 |:---:|---|---|---|:---:|
-| <img src="https://operixsolutions.com/icons/system/xyros.svg" width="36" alt="XYROS OS"/> | **XYROS OS** | Enterprise Work OS • 4-Tier Hierarchy • Passkeys | [`xyros.operix-solutions.online`](https://xyros.operix-solutions.online) | [![Open](https://img.shields.io/badge/Launch_App-2563EB?style=flat-square&logo=googlechrome&logoColor=white)](https://xyros.operix-solutions.online) |
-| <img src="https://operixsolutions.com/icons/system/operations.svg" width="36" alt="OPERIX Operations"/> | **OPERIX Operations** | ANPR Gate Automation • Geofenced Attendance | [`ops.operix-solutions.online`](https://www.ops.operix-solutions.online) | [![Open](https://img.shields.io/badge/Launch_App-2563EB?style=flat-square&logo=googlechrome&logoColor=white)](https://www.ops.operix-solutions.online) |
-| <img src="https://operixsolutions.com/icons/system/fmis.svg" width="36" alt="OPERIX FMIS"/> | **OPERIX FMIS** | ZATCA Phase 2 • Retail POS • Double-Entry GL | [`fmis.operix-solutions.online`](https://www.fmis.operix-solutions.online) | [![Open](https://img.shields.io/badge/Launch_App-059669?style=flat-square&logo=googlechrome&logoColor=white)](https://www.fmis.operix-solutions.online) |
-| <img src="https://operixsolutions.com/icons/system/hris.svg" width="36" alt="OPERIX HRIS"/> | **OPERIX HRIS** | Qiwa & Muqeem • WPS Payroll • AI Screening | [`hris.operix-solutions.online`](https://www.hris.operix-solutions.online) | [![Open](https://img.shields.io/badge/Launch_App-7C3AED?style=flat-square&logo=googlechrome&logoColor=white)](https://www.hris.operix-solutions.online) |
-| <img src="https://operixsolutions.com/icons/system/care.svg" width="36" alt="OPERIX Care"/> | **OPERIX Health Care** | CCHI Aligned • Longitudinal MRN • Clinical HIS | [`care.operix-solutions.online`](https://www.care.operix-solutions.online) | [![Open](https://img.shields.io/badge/Launch_App-D97706?style=flat-square&logo=googlechrome&logoColor=white)](https://www.care.operix-solutions.online) |
-| <img src="https://operixsolutions.com/icons/system/edu.png" width="36" alt="OPERIX Edu"/> | **OPERIX Edu** | Ministry Standards • Parent Portal • Dox Studio | [`edu.operix-solutions.online`](https://www.edu.operix-solutions.online) | [![Open](https://img.shields.io/badge/Launch_App-059669?style=flat-square&logo=googlechrome&logoColor=white)](https://www.edu.operix-solutions.online) |
-| <img src="https://operixsolutions.com/icons/system/speciality.svg" width="36" alt="OPERIX Speciality"/> | **OPERIX Speciality** | Specialty Café • Roastery Supply Chain • POS | [`cafe.operix-solutions.online`](https://cafe.operix-solutions.online) | [![Open](https://img.shields.io/badge/Launch_App-B45309?style=flat-square&logo=googlechrome&logoColor=white)](https://cafe.operix-solutions.online) |
-| <img src="https://operixsolutions.com/icons/system/binabbas.svg" width="36" alt="Abdullah Bin Abbas"/> | **Abdullah Bin Abbas** | Qur'an Centre Portal • Digital Certification | [`bin-abbas.operix-solutions.online`](https://www.bin-abbas.operix-solutions.online) | [![Open](https://img.shields.io/badge/Launch_Portal-2563EB?style=flat-square&logo=googlechrome&logoColor=white)](https://www.bin-abbas.operix-solutions.online) |
-| <img src="https://operixsolutions.com/icons/system/hasad.png" width="36" alt="Hasad Hub"/> | **Hasad Hub** | Smart Community • Real Estate Operations | [`hasad.operix-solutions.online`](https://www.hasad.operix-solutions.online/Naseem_City) | [![Open](https://img.shields.io/badge/Launch_Hub-DC2626?style=flat-square&logo=googlechrome&logoColor=white)](https://www.hasad.operix-solutions.online/Naseem_City) |
-| <img src="https://operixsolutions.com/icons/system/mamey.png" width="36" alt="Mamey Platform"/> | **Mamey Platform** | General Trading & Logistics • Supply Chain | [`mamey.vercel.app`](https://mamey.vercel.app) | [![Open](https://img.shields.io/badge/Launch_Site-0284C7?style=flat-square&logo=vercel&logoColor=white)](https://mamey.vercel.app) |
-| <img src="https://operixsolutions.com/icons/system/ops-site.svg" width="36" alt="OPERIX QA"/> | **OPERIX QA** | Quality Control Audits • Automated Scorecards | [`qa.operix-solutions.online`](https://qa.operix-solutions.online) | [![Open](https://img.shields.io/badge/Launch_QA-059669?style=flat-square&logo=googlechrome&logoColor=white)](https://qa.operix-solutions.online) |
-| <img src="https://operixsolutions.com/icons/system/operix-os.svg" width="36" alt="OPERIX Superadmin"/> | **OPERIX Superadmin** | Multi-Tenant Governance • Telemetry Console | [`admin.operix-solutions.online`](https://admin.operix-solutions.online) | [![Open](https://img.shields.io/badge/Launch_Console-1E293B?style=flat-square&logo=googlechrome&logoColor=white)](https://admin.operix-solutions.online) |
-| <img src="https://operixsolutions.com/icons/system/operix-sudan.png" width="36" alt="OPERIX Relief GIS"/> | **OPERIX Relief GIS** | Crisis Logistics Mapping • Emergency Relief | [`sudan.operix-solutions.online`](https://sudan.operix-solutions.online) | [![Open](https://img.shields.io/badge/Launch_GIS-2563EB?style=flat-square&logo=leaflet&logoColor=white)](https://sudan.operix-solutions.online) |
-| <img src="https://operixsolutions.com/brand-mark.svg" width="36" alt="OPERIX Corporate"/> | **OPERIX Portal** | Corporate Web Site & Solution Showcase | [`operixsolutions.com`](https://operixsolutions.com) | [![Open](https://img.shields.io/badge/Visit_Site-059669?style=flat-square&logo=vercel&logoColor=white)](https://operixsolutions.com) |
+| <img src="./icons/system/xyros.svg" width="36" alt="XYROS OS"/> | **XYROS OS** | Enterprise Work OS • 4-Tier Hierarchy • Passkeys | [`xyros.operix-solutions.online`](https://xyros.operix-solutions.online) | [![Open](https://img.shields.io/badge/Launch_App-2563EB?style=flat-square&logo=googlechrome&logoColor=white)](https://xyros.operix-solutions.online) |
+| <img src="./icons/system/operations.svg" width="36" alt="OPERIX Operations"/> | **OPERIX Operations** | ANPR Gate Automation • Geofenced Attendance | [`ops.operix-solutions.online`](https://www.ops.operix-solutions.online) | [![Open](https://img.shields.io/badge/Launch_App-2563EB?style=flat-square&logo=googlechrome&logoColor=white)](https://www.ops.operix-solutions.online) |
+| <img src="./icons/system/fmis.svg" width="36" alt="OPERIX FMIS"/> | **OPERIX FMIS** | ZATCA Phase 2 • Retail POS • Double-Entry GL | [`fmis.operix-solutions.online`](https://www.fmis.operix-solutions.online) | [![Open](https://img.shields.io/badge/Launch_App-059669?style=flat-square&logo=googlechrome&logoColor=white)](https://www.fmis.operix-solutions.online) |
+| <img src="./icons/system/hris.svg" width="36" alt="OPERIX HRIS"/> | **OPERIX HRIS** | Qiwa & Muqeem • WPS Payroll • AI Screening | [`hris.operix-solutions.online`](https://www.hris.operix-solutions.online) | [![Open](https://img.shields.io/badge/Launch_App-7C3AED?style=flat-square&logo=googlechrome&logoColor=white)](https://www.hris.operix-solutions.online) |
+| <img src="./icons/system/care.svg" width="36" alt="OPERIX Care"/> | **OPERIX Health Care** | CCHI Aligned • Longitudinal MRN • Clinical HIS | [`care.operix-solutions.online`](https://www.care.operix-solutions.online) | [![Open](https://img.shields.io/badge/Launch_App-D97706?style=flat-square&logo=googlechrome&logoColor=white)](https://www.care.operix-solutions.online) |
+| <img src="./icons/system/edu.png" width="36" alt="OPERIX Edu"/> | **OPERIX Edu** | Ministry Standards • Parent Portal • Dox Studio | [`edu.operix-solutions.online`](https://www.edu.operix-solutions.online) | [![Open](https://img.shields.io/badge/Launch_App-059669?style=flat-square&logo=googlechrome&logoColor=white)](https://www.edu.operix-solutions.online) |
+| <img src="./icons/system/speciality.svg" width="36" alt="OPERIX Speciality"/> | **OPERIX Speciality** | Specialty Café • Roastery Supply Chain • POS | [`cafe.operix-solutions.online`](https://cafe.operix-solutions.online) | [![Open](https://img.shields.io/badge/Launch_App-B45309?style=flat-square&logo=googlechrome&logoColor=white)](https://cafe.operix-solutions.online) |
+| <img src="./icons/system/binabbas.svg" width="36" alt="Abdullah Bin Abbas"/> | **Abdullah Bin Abbas** | Qur'an Centre Portal • Digital Certification | [`bin-abbas.operix-solutions.online`](https://www.bin-abbas.operix-solutions.online) | [![Open](https://img.shields.io/badge/Launch_Portal-2563EB?style=flat-square&logo=googlechrome&logoColor=white)](https://www.bin-abbas.operix-solutions.online) |
+| <img src="./icons/system/hasad.png" width="36" alt="Hasad Hub"/> | **Hasad Hub** | Smart Community • Real Estate Operations | [`hasad.operix-solutions.online`](https://www.hasad.operix-solutions.online/Naseem_City) | [![Open](https://img.shields.io/badge/Launch_Hub-DC2626?style=flat-square&logo=googlechrome&logoColor=white)](https://www.hasad.operix-solutions.online/Naseem_City) |
+| <img src="./icons/system/mamey.png" width="36" alt="Mamey Platform"/> | **Mamey Platform** | General Trading & Logistics • Supply Chain | [`mamey.vercel.app`](https://mamey.vercel.app) | [![Open](https://img.shields.io/badge/Launch_Site-0284C7?style=flat-square&logo=vercel&logoColor=white)](https://mamey.vercel.app) |
+| <img src="./icons/system/ops-site.svg" width="36" alt="OPERIX QA"/> | **OPERIX QA** | Quality Control Audits • Automated Scorecards | [`qa.operix-solutions.online`](https://qa.operix-solutions.online) | [![Open](https://img.shields.io/badge/Launch_QA-059669?style=flat-square&logo=googlechrome&logoColor=white)](https://qa.operix-solutions.online) |
+| <img src="./icons/system/operix-os.svg" width="36" alt="OPERIX Superadmin"/> | **OPERIX Superadmin** | Multi-Tenant Governance • Telemetry Console | [`admin.operix-solutions.online`](https://admin.operix-solutions.online) | [![Open](https://img.shields.io/badge/Launch_Console-1E293B?style=flat-square&logo=googlechrome&logoColor=white)](https://admin.operix-solutions.online) |
+| <img src="./icons/system/operix-sudan.png" width="36" alt="OPERIX Relief GIS"/> | **OPERIX Relief GIS** | Crisis Logistics Mapping • Emergency Relief | [`sudan.operix-solutions.online`](https://sudan.operix-solutions.online) | [![Open](https://img.shields.io/badge/Launch_GIS-2563EB?style=flat-square&logo=leaflet&logoColor=white)](https://sudan.operix-solutions.online) |
+| <img src="./icons/system/brand-mark.svg" width="36" alt="OPERIX Corporate"/> | **OPERIX Portal** | Corporate Web Site & Solution Showcase | [`operixsolutions.com`](https://operixsolutions.com) | [![Open](https://img.shields.io/badge/Visit_Site-059669?style=flat-square&logo=vercel&logoColor=white)](https://operixsolutions.com) |
 
 </div>
 
@@ -96,47 +96,47 @@ All enterprise products hosted on **`*.operix-solutions.online`** and **`operixs
 
 ### 1. 🖥️ **XYROS OS — Enterprise Work Operating System**
 * **URL:** [`https://xyros.operix-solutions.online`](https://xyros.operix-solutions.online)
-* **SVG Icon:** `operix-website/public/icons/system/xyros.svg`
+* **SVG Icon:** `./icons/system/xyros.svg`
 * **Features:** Built around a 4-tier hierarchy (Organizations, Workspaces, Boards, Groups/Items). Supports WebAuthn Passkeys, TOTP 2FA, global command palette (`Cmd/Ctrl + K`), embedded AI Copilot (`Cmd/Ctrl + J`), and dynamic Table/Kanban/Calendar views.
 
 ### 2. 🚚 **OPERIX Operations — Fleet & Workforce Matrix**
 * **URL:** [`https://www.ops.operix-solutions.online`](https://www.ops.operix-solutions.online)
-* **SVG Icon:** `operix-website/public/icons/system/operations.svg`
+* **SVG Icon:** `./icons/system/operations.svg`
 * **Features:** ANPR parking & gate automation, geofenced GPS workforce attendance, C-suite executive command center, AI communications core for corporate memos, and mission-specific low-code app builder.
 
 ### 3. 💰 **OPERIX FMIS — Finance & Retail ERP**
 * **URL:** [`https://www.fmis.operix-solutions.online`](https://www.fmis.operix-solutions.online)
-* **SVG Icon:** `operix-website/public/icons/system/fmis.svg`
+* **SVG Icon:** `./icons/system/fmis.svg`
 * **Features:** ZATCA Phase 2 e-invoicing compliance (UBL 2.1 XML clearing), double-entry general ledger, retail barcode POS, SKU stock reorder tracking, and embedded AI financial assistant.
 
 ### 4. 👥 **OPERIX HRIS — Human Capital Infrastructure**
 * **URL:** [`https://www.hris.operix-solutions.online`](https://www.hris.operix-solutions.online)
-* **SVG Icon:** `operix-website/public/icons/system/hris.svg`
+* **SVG Icon:** `./icons/system/hris.svg`
 * **Features:** Direct Qiwa & Muqeem government gateway integrations, WPS bank-ready payroll export, AI CV screening, GPS geofenced attendance, and native Capacitor mobile app.
 
 ### 5. 🏥 **OPERIX Health Care — Clinical Management Core**
 * **URL:** [`https://www.care.operix-solutions.online`](https://www.care.operix-solutions.online)
-* **SVG Icon:** `operix-website/public/icons/system/care.svg`
+* **SVG Icon:** `./icons/system/care.svg`
 * **Features:** Longitudinal patient case records (MRN), triage queue board, voice-to-text clinical dictation, pharmacy & blood bank formulary tracking, and HIPAA/CCHI aligned practices.
 
 ### 6. 🎓 **OPERIX Edu — School Management Platform**
 * **URL:** [`https://www.edu.operix-solutions.online`](https://www.edu.operix-solutions.online)
-* **SVG Icon:** `operix-website/public/icons/system/edu.png`
+* **SVG Icon:** `./icons/system/edu.png`
 * **Features:** Ministry of Education standards compliance, Dox Studio automated transcript and certificate generator, student registry, fees treasury, and parent progress portal.
 
 ### 7. ☕ **OPERIX Speciality — Café & Hospitality Operations**
 * **URL:** [`https://cafe.operix-solutions.online`](https://cafe.operix-solutions.online)
-* **SVG Icon:** `operix-website/public/icons/system/speciality.svg`
+* **SVG Icon:** `./icons/system/speciality.svg`
 * **Features:** Specialty coffee group POS with instant VAT breakdown, roastery green bean batch yield tracking, multi-branch stock management, and print-ready menu board designer.
 
 ### 8. 🕌 **Abdullah Bin Abbas Centre Portal**
 * **URL:** [`https://www.bin-abbas.operix-solutions.online`](https://www.bin-abbas.operix-solutions.online)
-* **SVG Icon:** `operix-website/public/icons/system/binabbas.svg`
+* **SVG Icon:** `./icons/system/binabbas.svg`
 * **Features:** Qur'an memorization circle logs, recitation assessment records, digital certification exports, and community event scheduling.
 
 ### 9. 🏡 **Hasad Hub — Smart Community Platform**
 * **URL:** [`https://www.hasad.operix-solutions.online/Naseem_City`](https://www.hasad.operix-solutions.online/Naseem_City)
-* **SVG Icon:** `operix-website/public/icons/system/hasad.png`
+* **SVG Icon:** `./icons/system/hasad.png`
 * **Features:** Real estate property operations, resident maintenance ticketing thread, facility logs, and automated community billing statements.
 
 ---
