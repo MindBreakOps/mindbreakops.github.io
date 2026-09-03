@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-42.5 -12 205 205" role="img" aria-label="OPERIX Solutions">
+  <title>OPERIX Solutions</title>
+  <!--
+    The OPERIX Solutions mark, padded into a square so browsers that crop a
+    favicon to a circle do not clip the hexagon's points.
+
+    Two versions in one file. A favicon is drawn by browser chrome, outside any
+    document that could define a custom property, so the colours are literal —
+    but `prefers-color-scheme` does reach here, and it is the only signal
+    available. On a dark tab strip the navy structure becomes a pale slate;
+    without that swap the mark is a dark shape on a dark bar.
+
+    Kept byte-identical in construction to packages/ui/src/operix-mark.svg.
+    Change one and change the other.
+  -->
+  <style>
+    .operix-structure { fill: #314053; }
+    .operix-accent { fill: #a68649; }
+    @media (prefers-color-scheme: dark) {
+      .operix-structure { fill: #dbe3ee; }
+      .operix-accent { fill: #c9a86a; }
+    }
+  </style>
+  <g fill-rule="evenodd">
+    <path class="operix-structure" d="M60 0 120 60 120 134 60 181 0 134 0 60Z M60 27 98.5 65.5 98.5 115.5 60 166 21.5 115.5 21.5 65.5Z" />
+    <path class="operix-structure" d="M60 46.5 98.5 90.8 60 128 21.5 90.8Z M60 73.3 81.4 90.8 60 108.7 38.6 90.8Z" />
+    <path class="operix-accent" d="M21.5 115.5 60 166 98.5 115.5 98.5 89.6 60 140.1 21.5 89.6Z" />
+  </g>
+</svg>

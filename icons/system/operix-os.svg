@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 181" role="img" aria-label="OPERIX OS">
+  <title>OPERIX OS</title>
+  <!--
+    The OPERIX Solutions mark, as shipped by the operix-os shell.
+
+    The upstream file carried a prefers-color-scheme swap for browser chrome.
+    Here the mark is always drawn on a light icon tile inside the OS, so it keeps
+    the light palette; the dark variant would paint near-white on white.
+  -->
+  <style>
+    .operix-structure { fill: #314053; }
+    .operix-accent { fill: #a68649; }
+  </style>
+  <g fill-rule="evenodd">
+    <path class="operix-structure" d="M60 0 120 60 120 134 60 181 0 134 0 60Z M60 27 98.5 65.5 98.5 115.5 60 166 21.5 115.5 21.5 65.5Z" />
+    <path class="operix-structure" d="M60 46.5 98.5 90.8 60 128 21.5 90.8Z M60 73.3 81.4 90.8 60 108.7 38.6 90.8Z" />
+    <path class="operix-accent" d="M21.5 115.5 60 166 98.5 115.5 98.5 89.6 60 140.1 21.5 89.6Z" />
+  </g>
+</svg>

@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="OPERIX Speciality">
+  <title>OPERIX Speciality</title>
+  <!--
+    Mark: a bean and a cup rim resolved into one form. The outer ring is the cup
+    seen from above; the inner slit is the bean's crease. Reads as a coffee mark
+    at 16px in a browser tab and as a monogram at poster size.
+
+    Theme handling is done inside the file with prefers-color-scheme, so a single
+    asset serves the light UI, the dark UI, the favicon and a printed receipt
+    without a second copy or any JavaScript.
+  -->
+  <style>
+    :root { color-scheme: light dark; }
+    .ring  { fill: #241C15; }
+    .crema { fill: #B4762B; }
+    .void  { fill: #FAF6F0; }
+    
+    /* Steam drifts only when motion is welcome. */
+    .steam { animation: rise 3.2s ease-in-out infinite; transform-origin: center; }
+    .steam-2 { animation-delay: .55s; }
+    .steam-3 { animation-delay: 1.1s; }
+    @keyframes rise {
+      0%   { opacity: 0;   transform: translateY(3px)  scaleY(.85); }
+      35%  { opacity: .85; }
+      100% { opacity: 0;   transform: translateY(-7px) scaleY(1.15); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .steam { animation: none; opacity: .5; }
+    }
+  </style>
+
+  <g class="steam">
+    <path d="M25 15c3-4-3-7 0-11" stroke="#B4762B" stroke-width="2.4" fill="none" stroke-linecap="round" opacity=".8"/>
+  </g>
+  <g class="steam steam-2">
+    <path d="M32 13c3-4-3-7 0-11" stroke="#B4762B" stroke-width="2.4" fill="none" stroke-linecap="round" opacity=".8"/>
+  </g>
+  <g class="steam steam-3">
+    <path d="M39 15c3-4-3-7 0-11" stroke="#B4762B" stroke-width="2.4" fill="none" stroke-linecap="round" opacity=".8"/>
+  </g>
+
+  <!-- Cup rim / bean silhouette -->
+  <circle class="ring" cx="32" cy="40" r="19"/>
+  <circle class="crema" cx="32" cy="40" r="13.5"/>
+  <!-- The crease: one stroke that turns the disc into a bean -->
+  <path class="void" d="M32 27.5c4.6 4.2 4.6 8.3 0 12.5s-4.6 8.3 0 12.5c-6.9 0-12.5-5.6-12.5-12.5S25.1 27.5 32 27.5z" opacity=".92"/>
+</svg>

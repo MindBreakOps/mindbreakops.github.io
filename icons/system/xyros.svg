@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <defs>
+    <linearGradient id="xyrosGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF3366"/>
+      <stop offset="30%" stop-color="#FF9900"/>
+      <stop offset="70%" stop-color="#00D2FF"/>
+      <stop offset="100%" stop-color="#0070F3"/>
+    </linearGradient>
+  </defs>
+  <rect width="100" height="100" rx="24" fill="url(#xyrosGrad)"/>
+  <!-- Stylized X -->
+  <path d="M22 26L48 50L22 74" stroke="#FFFFFF" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Stylized O -->
+  <circle cx="70" cy="50" r="16" stroke="#FFFFFF" stroke-width="9" fill="none"/>
+</svg>
