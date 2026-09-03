@@ -19,7 +19,7 @@
   <a href="https://github.com/mindbreakops">
     <img src="https://img.shields.io/github/stars/mindbreakops?style=for-the-badge&logo=github&logoColor=181717&color=E5E7EB&labelColor=F3F4F6" alt="GitHub Stars" />
   </a>
-  <a href="https://operixsolutions.com">
+  <a href="https://operix-solutions.com">
     <img src="https://img.shields.io/badge/Production%20Systems-14%20Apps-2563EB?style=for-the-badge&logo=adguard&logoColor=white" alt="Production Systems" />
   </a>
   <a href="https://github.com/mindbreakops">
@@ -33,7 +33,7 @@
 
 ## 🌐 Enterprise Portal & Product Network
 
-* **Corporate Site:** [https://operixsolutions.com](https://operixsolutions.com)
+* **Corporate Site:** [https://operix-solutions.com](https://operix-solutions.com)
 * **Product Network Domain:** `*.operix-solutions.online`
 * **Local Icons Directory:** [`./icons/system/`](./icons/system/)
 
@@ -67,7 +67,7 @@
 
 ## 🚀 Official OPERIX Production Products Catalog
 
-All enterprise products hosted on **`*.operix-solutions.online`** and **`operixsolutions.com`**:
+All enterprise products hosted on **`*.operix-solutions.online`** and **`operix-solutions.com`**:
 
 <div align="center">
 
@@ -86,7 +86,7 @@ All enterprise products hosted on **`*.operix-solutions.online`** and **`operixs
 | <img src="./icons/system/ops-site.svg" width="36" alt="OPERIX QA"/> | **OPERIX QA** | Quality Control Audits • Automated Scorecards | [`qa.operix-solutions.online`](https://qa.operix-solutions.online) | [![Open](https://img.shields.io/badge/Launch_QA-059669?style=flat-square&logo=googlechrome&logoColor=white)](https://qa.operix-solutions.online) |
 | <img src="./icons/system/operix-os.svg" width="36" alt="OPERIX Superadmin"/> | **OPERIX Superadmin** | Multi-Tenant Governance • Telemetry Console | [`admin.operix-solutions.online`](https://admin.operix-solutions.online) | [![Open](https://img.shields.io/badge/Launch_Console-1E293B?style=flat-square&logo=googlechrome&logoColor=white)](https://admin.operix-solutions.online) |
 | <img src="./icons/system/operix-sudan.png" width="36" alt="OPERIX Relief GIS"/> | **OPERIX Relief GIS** | Crisis Logistics Mapping • Emergency Relief | [`sudan.operix-solutions.online`](https://sudan.operix-solutions.online) | [![Open](https://img.shields.io/badge/Launch_GIS-2563EB?style=flat-square&logo=leaflet&logoColor=white)](https://sudan.operix-solutions.online) |
-| <img src="./icons/system/brand-mark.svg" width="36" alt="OPERIX Corporate"/> | **OPERIX Portal** | Corporate Web Site & Solution Showcase | [`operixsolutions.com`](https://operixsolutions.com) | [![Open](https://img.shields.io/badge/Visit_Site-059669?style=flat-square&logo=vercel&logoColor=white)](https://operixsolutions.com) |
+| <img src="./icons/system/brand-mark.svg" width="36" alt="OPERIX Corporate"/> | **OPERIX Portal** | Corporate Web Site & Solution Showcase | [`operix-solutions.com`](https://operix-solutions.com) | [![Open](https://img.shields.io/badge/Visit_Site-059669?style=flat-square&logo=vercel&logoColor=white)](https://operix-solutions.com) |
 
 </div>
 
@@ -204,8 +204,8 @@ graph TD
 <div align="center">
 
 <p align="center">
-  <a href="https://operixsolutions.com">
-    <img src="https://img.shields.io/badge/Website-operixsolutions.com-2563EB?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Website" />
+  <a href="https://operix-solutions.com">
+    <img src="https://img.shields.io/badge/Website-operix-solutions.com-2563EB?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Website" />
   </a>
   <a href="https://github.com/mindbreakops">
     <img src="https://img.shields.io/badge/GitHub-mindbreakops-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
@@ -213,8 +213,8 @@ graph TD
   <a href="https://linkedin.com">
     <img src="https://img.shields.io/badge/LinkedIn-OPERIX_Solutions-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
   </a>
-  <a href="mailto:contact@operixsolutions.com">
-    <img src="https://img.shields.io/badge/Email-contact%40operixsolutions.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
+  <a href="mailto:contact@operix-solutions.com">
+    <img src="https://img.shields.io/badge/Email-contact%40operix-solutions.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
   </a>
 </p>
 
